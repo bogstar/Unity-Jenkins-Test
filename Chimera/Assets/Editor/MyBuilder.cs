@@ -40,11 +40,11 @@ public class MyBuilder : MonoBehaviour
 			targetGroup = BuildTargetGroup.Android,
 			target = BuildTarget.Android,
 			options = BuildOptions.Development,
-			locationPathName = $"Build/Test.apk"
+			locationPathName = $"../Build/Test.apk"
 		};
 
 		if (!string.IsNullOrEmpty(buildPath))
-			options.locationPathName = buildPath;
+			options.locationPathName = $"../Build/{buildPath}";
 
 		BuildPipeline.BuildPlayer(options);
 	}
