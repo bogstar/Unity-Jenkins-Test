@@ -10,7 +10,7 @@ public class MyBuilder : MonoBehaviour
 	public const string VERSION_TYPE_ARG = "versionType";
 	public const string COMPANY_NAME_ARG = "companyName";
 	public const string SCRIPTING_BACKEND_ARG = "scriptingBackend";
-	public const string BUILD_PATH_ARG = "buildPath";
+	public const string BUILD_NAME_ARG = "buildName";
 
 	[MenuItem("Build/Build Android")]
 	public static void BuildAndroid()
@@ -20,7 +20,7 @@ public class MyBuilder : MonoBehaviour
 		var versionType = GetArg(VERSION_TYPE_ARG);
 		var companyName = GetArg(COMPANY_NAME_ARG);
 		var scriptingBackend = GetArg(SCRIPTING_BACKEND_ARG);
-		var buildPath = GetArg(BUILD_PATH_ARG);
+		var buildName = GetArg(BUILD_NAME_ARG);
 
 		if (!string.IsNullOrEmpty(productName))
 			PlayerSettings.productName = productName;
@@ -43,8 +43,8 @@ public class MyBuilder : MonoBehaviour
 			locationPathName = $"../Build/Test.apk"
 		};
 
-		if (!string.IsNullOrEmpty(buildPath))
-			options.locationPathName = $"../Build/{buildPath}.apk";
+		if (!string.IsNullOrEmpty(buildName))
+			options.locationPathName = $"../Build/{buildName}.apk";
 
 		BuildPipeline.BuildPlayer(options);
 	}
