@@ -44,7 +44,7 @@ public class MyBuilder : MonoBehaviour
 		};
 
 		if (!string.IsNullOrEmpty(buildPath))
-			options.locationPathName = $"../Build/{buildPath}";
+			options.locationPathName = $"../Build/{buildPath}.apk";
 
 		BuildPipeline.BuildPlayer(options);
 	}
